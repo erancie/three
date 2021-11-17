@@ -6,6 +6,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
 
 
+
 // instantiate a loader
 const loader = new OBJLoader();
 
@@ -57,20 +58,20 @@ renderer.setSize (window.innerWidth, window.innerHeight )
 camera.position.setZ(100)
 
 /////TEXTURES/////////////////
-const bgTexture = new THREE.TextureLoader().load('space-bg.jpg')
-const globeTexture = new THREE.TextureLoader().load('mirrorball.jpg')
-const ball = new THREE.TextureLoader().load('ball.jpg')
-const kanga = new THREE.TextureLoader().load('kanga.png')
-const tex = new THREE.TextureLoader().load('tex.png')
-const icons = new THREE.TextureLoader().load('icons.jpg')
+const bgTexture = new THREE.TextureLoader().load('Public/Images/space-bg.jpg')
+const globeTexture = new THREE.TextureLoader().load('Public/Images/mirrorball.jpg')
+const ball = new THREE.TextureLoader().load('Public/Images/ball.jpg')
+const kanga = new THREE.TextureLoader().load('Public/Images/kanga.png')
+const tex = new THREE.TextureLoader().load('Public/Images/tex.png')
+const icons = new THREE.TextureLoader().load('Public/Images/icons.jpg')
 
 //NORMAL MAPS///////////////
-const thatch = new THREE.TextureLoader().load('thatch.jpg')
-const normalmap = new THREE.TextureLoader().load('normalmap.png')
-const iconsnormal = new THREE.TextureLoader().load('iconsnormal.png')
+const thatch = new THREE.TextureLoader().load('Public/Images/thatch.jpg')
+const normalmap = new THREE.TextureLoader().load('Public/Images/normalmap.png')
+const iconsnormal = new THREE.TextureLoader().load('Public/Images/iconsnormal.png')
 
 ////////BG//////////////////////////
-// scene.background = kanga
+scene.background = kanga
 
 
 ///////////TORUS////////////////////
@@ -84,7 +85,7 @@ const material = new THREE.MeshStandardMaterial( {
 } )
 const torus = new THREE.Mesh( geometry, material )
 torus.position.set(40, 40, 40)
-// scene.add(torus)
+scene.add(torus)
 
 //PLANE/////aaaaaaaaaaa
 
@@ -122,7 +123,7 @@ scene.add(globe);
 
 
 ////LIGHTING///////
-const ambientLight = new THREE.AmbientLight(0x9003fc)
+const ambientLight = new THREE.AmbientLight(0xf2ba1f)
 
 const pointLight = new THREE.PointLight(0xffffff)
 const pointLight2 = new THREE.PointLight(0xffffff)
@@ -150,12 +151,15 @@ function addStar(){
 
 // Array(200).fill().forEach(()=>addStar)
 
-for (let i = 0; i < 11100; i++) {
+for (let i = 0; i < 2000; i++) {
   addStar()
 }
 
 function animate() {
   requestAnimationFrame( animate );
+
+  // CAREMA_UPDATE
+  //ITEM  UPDATE
 
   torus.rotation.x += 0.006
   torus.rotation.y += 0.006
