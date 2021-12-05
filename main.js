@@ -5,8 +5,6 @@ import { MeshBasicMaterial, TetrahedronGeometry } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
 
-
-
 // instantiate a loader
 const loader = new OBJLoader();
 
@@ -160,7 +158,7 @@ function animate() {
 
   // CAREMA_UPDATE
   //ITEM  UPDATE
-
+  
   torus.rotation.x += 0.006
   torus.rotation.y += 0.006
   torus.rotation.z += 0.003
